@@ -12,8 +12,8 @@
 
     </head>
     <body>
-    <h1 class="text-3xl font-bold underline bg-blue-500">
-        Hello world! Huwu
+    <h1 class="text-3xl font-bold underline bg-amber-500">
+        Hello world!
     </h1>
     <script src="{{ mix('js/app.js') }}" defer></script>
     </body>
