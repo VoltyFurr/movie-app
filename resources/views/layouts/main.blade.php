@@ -13,26 +13,26 @@
 <body class="font-sans bg-gray-900 text-white">
 <!-- Navbar-->
 <nav class="border-b border-gray-800">
-    <div class="container mx-auto flex items-center justify-between px-4 py-6">
-        <ul class="flex items-center">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
+        <ul class="flex flex-col md:flex-row items-center">
             <li>
                 <a href="#">
                     <img src="{{ asset('/images/cinema.png') }}" alt="" class="w-16">
                 </a>
             </li>
-            <li class="ml-16">
+            <li class="md:ml-16 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">Movies</a>
             </li>
-            <li class="ml-6">
+            <li class="md:ml-6 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">TV Shows</a>
             </li>
-            <li class="ml-6">
+            <li class="md:ml-6 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">Actors</a>
             </li>
         </ul>
         <!-- Search input -->
-        <div class="flex items-center">
-            <div class="relative">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="relative mt-3 md:mt-0">
                 <label>
                     <input type="text"
                            class="bg-gray-800 rounded-full w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline"
@@ -46,8 +46,8 @@
                 </div>
             </div>
             <!-- User avatar -->
-            <div class="ml-4">
-                <a href="">
+            <div class="md:ml-4 mt-3 md:mt-0">
+                <a href="#">
                     <img src="{{ asset('/images/avatar.png') }}" alt="avatar" class="rounded-full w-12 h-12">
                 </a>
             </div>
