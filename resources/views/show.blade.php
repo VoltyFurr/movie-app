@@ -67,97 +67,42 @@
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Cast</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-300">Actor name</a>
-                        <div class="text-gray-400 text-sm">
-                            Name in a movie
+                @foreach($movie['credits']['cast'] as $cast)
+                    @if($loop->index < 5)
+                        <div class="mt-8">
+                            <a href="#">
+                                <img src="{{ 'https://image.tmdb.org/t/p/w300'.$cast['profile_path'] }}" alt="actor"
+                                     class="hover:opacity-75 transition ease-in-out duration-150">
+                            </a>
+                            <div class="mt-2">
+                                <a href="#" class="text-lg mt-2 hover:text-gray-300">{{  $cast['name'] }}</a>
+                                <div class="text-gray-400 text-sm">
+                                    {{ $cast['character'] }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-300">Actor name</a>
-                        <div class="text-gray-400 text-sm">
-                            Name in a movie
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-300">Actor name</a>
-                        <div class="text-gray-400 text-sm">
-                            Name in a movie
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-300">Actor name</a>
-                        <div class="text-gray-400 text-sm">
-                            Name in a movie
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-300">Actor name</a>
-                        <div class="text-gray-400 text-sm">
-                            Name in a movie
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div> <!-- End Cast -->
 
+    <!-- Movie images-->
     <div class="movie-cast border-b border-gray-800">
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Pictures</h2>
             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="{{ asset('/images/movie-empty.png') }}" alt=""
-                             class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                </div>
-
+                @foreach ($movie['images']['backdrops'] as $image)
+                    @if ($loop->index < 9)
+                        <div class="mt-8">
+                            <a href="#">
+                                <img src="{{ "https://image.tmdb.org/t/p/w500".$image['file_path'] }}" alt="image"
+                                     class="hover:opacity-75 transition ease-in-out duration-150">
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div><!-- End movie images -->
 @endsection
