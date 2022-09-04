@@ -579,8 +579,20 @@ video {
 .mt-3 {
   margin-top: 0.75rem;
 }
+.mr-8 {
+  margin-right: 2rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
 .flex {
   display: flex;
+}
+.inline-flex {
+  display: inline-flex;
 }
 .grid {
   display: grid;
@@ -602,6 +614,9 @@ video {
 }
 .w-12 {
   width: 3rem;
+}
+.flex-none {
+  flex: none;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -808,6 +823,10 @@ video {
   }
 }
 @media (min-width: 1024px) {
+
+  .lg\:w-96 {
+    width: 24rem;
+  }
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
