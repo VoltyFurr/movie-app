@@ -553,6 +553,9 @@ video {
 .right-0 {
   right: 0px;
 }
+.z-50 {
+  z-index: 50;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
