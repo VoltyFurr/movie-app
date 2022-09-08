@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\ViewModels\ActorsViewModel;
 use Illuminate\Http\Request;
+use App\ViewModels\ActorViewModel;
+use App\ViewModels\ActorsViewModel;
 use Illuminate\Support\Facades\Http;
 
 class ActorsController extends Controller
@@ -15,11 +16,10 @@ class ActorsController extends Controller
      */
     public function index($page = 1)
     {
-
         abort_if($page > 500, 204);
 
         $popularActors = Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/person/popular?page='.$page)
+            ->get('https://api.themoviedb.org/3/person/popular?page=' . $page)
             ->json()['results'];
 
         $viewModel = new ActorsViewModel($popularActors, $page);
@@ -40,7 +40,7 @@ class ActorsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -51,18 +51,32 @@ class ActorsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+        $actor = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/person/' . $id)
+            ->json();
 
+        $social = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/person/' . $id . '/external_ids')
+            ->json();
+
+        $credits = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/person/' . $id . '/combined_credits')
+            ->json();
+
+        $viewModel = new ActorViewModel($actor, $social, $credits);
+
+        return view('actors.show', $viewModel);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -70,11 +84,11 @@ class ActorsController extends Controller
         //
     }
 
-    /**
+    /**x
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -85,7 +99,7 @@ class ActorsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
