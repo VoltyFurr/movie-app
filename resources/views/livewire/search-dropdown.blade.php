@@ -1,4 +1,3 @@
-<!-- Dropdown -->
 <div class="relative mt-3 md:mt-0" x-data="{ isOpen: true }" @click.away="isOpen = false">
     <label>
         <input wire:model.debounce.500ms="search" type="text"
@@ -15,7 +14,9 @@
                         111.41-1.41zM10 16a6 6 0 100-12 6 6 0 000 12z"/>
         </svg>
     </div>
-    <!-- Show movies if more than 2 characters -->
+
+    <div wire:loading class="spinner top-0 right-0 mr-4 mt-3"></div>
+
     @if(strlen($search) >= 2)
         <div class=" z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4" x-show.transition.opacity="isOpen">
 
