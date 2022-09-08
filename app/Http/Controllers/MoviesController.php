@@ -28,23 +28,13 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
 
-//        $genres = collect($genresArray)->mapWithKeys(function ($genre) {
-//            return [$genre['id'] => $genre['name']];
-//        });
-
-//        return view('index', [
-//            'popularMovies' => $popularMovies,
-//            'nowPlayingMovies' => $nowPlayingMovies,
-//            'genres' => $genres,
-//        ]);
-
         $viewModel = new MoviesViewModel(
             $popularMovies,
             $nowPlayingMovies,
             $genres,
         );
 
-        return view('index', $viewModel);
+        return view('movies.index', $viewModel);
     }
 
     /**
@@ -82,7 +72,7 @@ class MoviesController extends Controller
 
         $viewModel = new MovieViewModel($movie);
 
-        return view('show', $viewModel);
+        return view('movies.show', $viewModel);
     }
 
     /**

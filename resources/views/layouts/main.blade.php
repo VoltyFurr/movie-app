@@ -30,7 +30,7 @@
                 <a href="#" class="hover:text-gray-300">TV Shows</a>
             </li>
             <li class="md:ml-6 mt-3 md:mt-0">
-                <a href="#" class="hover:text-gray-300">Actors</a>
+                <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
             </li>
         </ul>
         <!-- Search input -->
@@ -48,7 +48,8 @@
 
 @yield('content')
 <script src="{{ mix('js/app.js') }}" defer></script>
-
 @livewireScripts
+
+@yield('scripts')
 </body>
 </html>
