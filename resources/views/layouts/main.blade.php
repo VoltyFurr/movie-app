@@ -18,7 +18,7 @@
 <body class="font-sans bg-gray-900 text-white">
 <!-- Navbar-->
 <nav class="border-b border-gray-800 bg-gray-900 z-50">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-4">
         <ul class="flex flex-col md:flex-row items-center">
             <li>
                 <a href="{{ route('movies.index') }}">
