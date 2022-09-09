@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="movie-info border-b border-gray-800">
-        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
+        <div class="container mx-auto px-4 pt-36 flex flex-col md:flex-row">
             <div class="flex-none">
                 <img src="{{ $movie['poster_path'] }}" alt="" class="w-64 lg:w-96 rounded-lg">
             </div>
@@ -129,7 +129,7 @@
                 class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
                 x-show="isOpen">
                 <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                    <div class="bg-gray-900 rounded">
+                    <div class="bg-gray-900 rounded mt-28">
                         <div class="flex justify-end pr-4 pt-2">
                             <button
                                 @click="isOpen = false"

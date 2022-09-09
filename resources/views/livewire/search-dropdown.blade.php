@@ -17,7 +17,7 @@
 
 
     @if(strlen($search) >= 2)
-        <div class=" z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4" x-show.transition.opacity="isOpen">
+        <div class="z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4" x-show.transition.opacity="isOpen">
 
             @if($searchResults->count() > 0)
                 <ul>

@@ -3,7 +3,7 @@
 @section('content')
     <!-- Actor info -->
     <div class="movie-info border-b border-gray-800">
-        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
+        <div class="container mx-auto px-4 pt-36 flex flex-col md:flex-row">
             <div class="flex-none">
                 <img src="{{ $actor['profile_path'] }}" alt="profile image" class="w-76 rounded-lg">
 

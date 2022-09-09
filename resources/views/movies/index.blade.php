@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container mx-auto px-4 pt-16">
+    <div class="container mx-auto px-4 pt-12 md:pt-36">
         <!-- Popular movies -->
         <div class="popular-movies">
             <h2 class="uppercase tracking-wider text-lime-600 text-lg font-semibold">
