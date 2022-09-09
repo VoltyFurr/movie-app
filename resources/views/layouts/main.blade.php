@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie app</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/donut.ico') }}">
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Connect livewire -->
@@ -20,17 +22,14 @@
         <ul class="flex flex-col md:flex-row items-center">
             <li>
                 <a href="{{ route('movies.index') }}">
-                    <img src="{{ asset('/images/cinema.png') }}" alt="" class="w-16">
+                    <img src="{{ asset('/images/donut.png') }}" alt="logo" class="w-16">
                 </a>
             </li>
-            <li class="md:ml-16 mt-3 md:mt-0">
-                <a href="{{ route('movies.index') }}" class="hover:text-gray-300">Movies</a>
+            <li class="md:ml-6 mt-3 md:mt-0">
+                <a href="{{ route('tv.index') }}" class="text-lime-500 hover:text-lime-700 text-2xl">TV Shows</a>
             </li>
             <li class="md:ml-6 mt-3 md:mt-0">
-                <a href="{{ route('tv.index') }}" class="hover:text-gray-300">TV Shows</a>
-            </li>
-            <li class="md:ml-6 mt-3 md:mt-0">
-                <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
+                <a href="{{ route('actors.index') }}" class="text-lime-500 hover:text-lime-700 text-2xl">Actors</a>
             </li>
         </ul>
         <!-- Search input -->

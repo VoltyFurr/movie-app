@@ -5,7 +5,7 @@
     <div class="movie-info border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
             <div class="flex-none">
-                <img src="{{ $actor['profile_path'] }}" alt="profile image" class="w-76">
+                <img src="{{ $actor['profile_path'] }}" alt="profile image" class="w-76 rounded-lg">
 
                 <!-- Actor social if exists-->
                 <ul class="flex items-center mt-4">
@@ -58,7 +58,7 @@
 
             <!-- Actor bio -->
             <div class="md:ml-24">
-                <h2 class="text-4xl font-semibold">{{ $actor['name'] }}</h2>
+                <h2 class="text-4xl font-semibold text-lime-500">{{ $actor['name'] }}</h2>
                 <div class="flex flex-wrap items-center text-gray-400 text-sm">
                     <svg class="fill-current text-gray-400 hover:text-white w-4" viewBox="0 0 448 512">
                         <path d="M448 384c-28.02 0-31.26-32-74.5-32-43.43 0-46.825 32-74.75 32-27.695 0-31.454-32-74.75-32-42.842
@@ -78,13 +78,13 @@
                 </p>
 
                 <!-- Actor know for movies -->
-                <h4 class="font-semibold mt-12">Known for</h4>
+                <h4 class="font-semibold mt-12 text-lime-500">Known for</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                     @foreach($knownForMovies as $movie)
                         <div class="mt-4">
                             <a href="{{ $movie['linkToPage'] }}"><img
                                     src="{{ $movie['poster_path'] }}"
-                                    alt="poster" class="hover:opacity-75 transition ease-in-out duration-150"></a>
+                                    alt="poster" class="hover:opacity-75 transition ease-in-out duration-150 rounded-lg"></a>
                             <a href="{{ $movie['linkToPage'] }}"
                                class="text-sm leading-normal block text-gray-400 hover:text-white mt-1">
                                 {{ $movie['title'] }}
@@ -99,7 +99,7 @@
     <!-- Credits -->
     <div class="credits border-b border-gray-800">
         <div class="container mx-auto px-4 py-16">
-            <h2 class="text-4xl font-semibold">Credits</h2>
+            <h2 class="text-4xl font-semibold text-lime-500">Credits</h2>
             <ul class="list-disc leading-loose pl-5 mt-8">
                 @foreach($credits as $credit)
                     <li>{{ $credit['release_year'] }} &middot; <strong>{{ $credit['title'] }}</strong>

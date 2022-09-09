@@ -1,13 +1,13 @@
 <div class="mt-8">
     <a href="{{ route('movies.show', $movie['id']) }}">
         <img src="{{ $movie['poster_path'] }}" alt="poster"
-             class="hover:opacity-75 transition ease-in-out duration-150">
+             class="hover:opacity-75 transition ease-in-out duration-150 rounded-lg">
     </a>
     <div class="mt-2">
         <a href="{{ route('movies.show', $movie['id']) }}"
-           class="text-lg mt-2 hover:text-gray-300">{{ $movie['title'] }}</a>
+           class="text-lg mt-2 hover:text-lime-700 text-lime-500">{{ $movie['title'] }}</a>
         <div class="flex items-center text-gray-400 text-sm mt-1">
-            <svg class="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
+            <svg class="fill-current text-lime-500 w-4" viewBox="0 0 24 24">
                 <g data-name="Layer 2">
                     <path d="M17.56 21a1 1 0 01-.46-.11L12 18.22l-5.1
                                 2.67a1 1 0 01-1.45-1.06l1-5.63-4.12-4a1 1 0 01-.25-1 1 1 0 01.81-.68l5.7-.83
