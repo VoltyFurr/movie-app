@@ -62,7 +62,7 @@
                                                     class="text-3xl leading-none hover:text-gray-300">&times;
                                             </button>
                                         </div>
-                                        <div class="modal-body px-6 py-6">
+                                        <div class="modal-body px-6 py-6win">
                                             <div class="responsive-container overflow-hidden relative"
                                                  style="padding-top: 56.25%">
                                                 <iframe class="responsive-iframe absolute top-0 left-0 w-full h-full"
@@ -93,7 +93,8 @@
                                  class="hover:opacity-75 transition ease-in-out duration-150 rounded-lg">
                         </a>
                         <div class="mt-2">
-                            <a href="{{ route('actors.show', $cast['id']) }}" class="text-lg mt-2 hover:text-gray-300">{{  $cast['name'] }}</a>
+                            <a href="{{ route('actors.show', $cast['id']) }}"
+                               class="text-lg mt-2 hover:text-gray-300">{{  $cast['name'] }}</a>
                             <div class="text-gray-400 text-sm">
                                 {{ $cast['character'] }}
                             </div>
