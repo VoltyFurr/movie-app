@@ -19,11 +19,11 @@ In .env file add TMDB_TOKEN(API key) for TMDB site
 ### build containers:
 `sail build`
 
-### star all dockers container:
+### start all dockers container:
 `sail up -d`
 
 ### start the project:
-`yarn dev or npm run watch`
+`yarn dev` or `npm run watch`
 
 You also can run tests to make sure everything works:
 
